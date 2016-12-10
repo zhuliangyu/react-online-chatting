@@ -1,5 +1,3 @@
-
-
 import React, { Component } from 'react';
 
 class ShowMessages extends Component {
