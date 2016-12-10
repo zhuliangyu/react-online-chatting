@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './App.css';
 import MyName from './components/myName';
 import InputBar from './components/InputBar';
 import ShowMessage from './components/ShowMessages';
@@ -32,13 +31,26 @@ class App extends Component {
             arr: []
         };
 
-
         this.submitHander = this.submitHander.bind(this);
+        this.deleteHandler = this.deleteHandler.bind(this);
 
     }
 
 
+    componentDidUpdate(){
+        // alert("update")
+        // window.scrollTo(0, 999);
+
+        setTimeout(function () {
+            window.scrollTo(0, 99999);
+        },1);
+
+    }
+
     componentDidMount() {
+
+        //fetch data from firebase
+        //put data into my app state
         rootRef.on('value', (snapshot) => {
 
             let mydata = snapshot.child('messageArr').val();
@@ -48,8 +60,9 @@ class App extends Component {
                 arr:mydata
             });
 
-            console.log(this.state.messageArr);
-
+            setTimeout(function () {
+                window.scrollTo(0, 99999);
+            },1);
 
         });
 
@@ -65,11 +78,19 @@ class App extends Component {
         var newArray = this.state.arr.slice();
         newArray.push({name: name, body: body});
 
+        //change firebase value
+        //push data to firebase db
         rootRef.set({
             messageArr: newArray
         });
 
-        this.setState({arr: newArray})
+        // this.setState({arr: newArray})
+
+
+    }
+
+    deleteHandler(){
+        this.setState({arr: []})
 
     }
 
@@ -78,10 +99,10 @@ class App extends Component {
         return (
             <div className="App">
                 <MyName/>
-                <InputBar mySubmitHandler={this.submitHander}/>
                 <ShowMessage messageList={this.state.arr}/>
+                <InputBar mySubmitHandler={this.submitHander}/>
 
-
+                <button type="button" className="btn-danger" onClick={this.deleteHandler}>Delete all message</button>
             </div>
         );
     }

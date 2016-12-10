@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {Alert} from 'react-bootstrap';
+
+
 
 class ShowMessages extends Component {
     constructor(props) {
@@ -9,19 +12,6 @@ class ShowMessages extends Component {
 
     }
 
-    // onSubmitHandler(event){
-    //
-    //     let nameNode=event.target.parentNode.firstChild;
-    //     let messageNode=nameNode.nextSibling;
-    //
-    //     let name=nameNode.value;
-    //     let message=messageNode.value;
-    //
-    //     this.props.mySubmitHandler(name, message);
-    //
-    //
-    // }
-
 
 
 
@@ -30,9 +20,10 @@ class ShowMessages extends Component {
         return (
             <div className="message">
                 {this.props.messageList.map(function (message,index) {
-                    return (<div key={index}>
+                    return (<div key={index} className="alert alert-success">
 
-                        <p>Name: {message.name}</p>
+
+                        <span className="label label-success">{message.name}</span>
                         <p>Message: {message.body}</p>
 
                     </div>)
