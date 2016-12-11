@@ -21,10 +21,6 @@ const rootRef = defaultDatabase.ref();
 class App extends Component {
     constructor(props) {
         super(props);
-        // this.state={
-        //     name:"",
-        //     message:""
-        // };
 
         this.state = {
             arr: []
@@ -59,9 +55,6 @@ class App extends Component {
                 arr:mydata
             });
 
-            setTimeout(function () {
-                window.scrollTo(0, 99999);
-            },1);
 
         });
 
@@ -75,6 +68,7 @@ class App extends Component {
         //write back to firebase
 
         var newArray = this.state.arr.slice();
+        // var newArray = [];
         newArray.push({name: name, body: body});
 
         //change firebase value
@@ -83,13 +77,15 @@ class App extends Component {
             messageArr: newArray
         });
 
-        // this.setState({arr: newArray})
+        this.setState({arr: newArray})
 
 
     }
 
     deleteHandler(){
-        this.setState({arr: []})
+
+        this.setState({arr: []});
+
 
     }
 
@@ -102,6 +98,8 @@ class App extends Component {
                 <InputBar mySubmitHandler={this.submitHander}/>
 
                 <button type="button" className="btn-danger" onClick={this.deleteHandler}>Delete all message</button>
+
+                {/*personal information*/}
                 <div className="well">
                      <div>
                          Github: <a href="https://github.com/zhuliangyu/react-online-chatting">https://github.com/zhuliangyu/react-online-chatting</a>
@@ -111,6 +109,7 @@ class App extends Component {
                         <a href="https://zhuliangyu.github.io/react-online-chatting/">https://zhuliangyu.github.io/react-online-chatting/</a>
                     </div>
                 </div>
+                {/*personal information*/}
 
 
             </div>
