@@ -15,7 +15,6 @@ var config = {
 var defaultApp = firebase.initializeApp(config);
 
 //  You can retrieve services via the defaultApp variable...
-var defaultStorage = defaultApp.storage();
 var defaultDatabase = defaultApp.database();
 
 const rootRef = defaultDatabase.ref();
@@ -104,7 +103,13 @@ class App extends Component {
 
                 <button type="button" className="btn-danger" onClick={this.deleteHandler}>Delete all message</button>
                 <div className="well">
-                     Github: <a href="https://github.com/zhuliangyu/react-online-chatting">https://github.com/zhuliangyu/react-online-chatting</a>
+                     <div>
+                         Github: <a href="https://github.com/zhuliangyu/react-online-chatting">https://github.com/zhuliangyu/react-online-chatting</a>
+                     </div>
+                    <div>
+                        Demo:
+                        <a href="https://zhuliangyu.github.io/react-online-chatting/">https://zhuliangyu.github.io/react-online-chatting/</a>
+                    </div>
                 </div>
 
 
