@@ -14,6 +14,7 @@ class InputBar extends Component {
 
     onSubmitHandler(event) {
 
+        event.preventDefault();
         let nameNode = event.target.parentNode.firstChild;
         let messageNode = nameNode.nextSibling;
 
