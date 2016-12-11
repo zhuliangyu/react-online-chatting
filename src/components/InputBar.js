@@ -1,13 +1,6 @@
 import React, {Component} from 'react';
-// import Firebase from 'firebase';
-// import ReactFireMixin from 'reactfire';
-// import reactMixin from 'react-mixin';
-import Style from './InputBar.css'
-
 import {Button} from 'react-bootstrap';
-import {FormGroup} from 'react-bootstrap';
-import {FormControl} from 'react-bootstrap';
-import {Jumbotron} from 'react-bootstrap';
+
 
 
 class InputBar extends Component {

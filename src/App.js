@@ -103,6 +103,11 @@ class App extends Component {
                 <InputBar mySubmitHandler={this.submitHander}/>
 
                 <button type="button" className="btn-danger" onClick={this.deleteHandler}>Delete all message</button>
+                <div className="well">
+                     Github: <a href="https://github.com/zhuliangyu/react-online-chatting">https://github.com/zhuliangyu/react-online-chatting</a>
+                </div>
+
+
             </div>
         );
     }
