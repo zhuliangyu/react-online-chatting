@@ -104,9 +104,14 @@ class App extends Component {
                      <div>
                          Github: <a href="https://github.com/zhuliangyu/react-online-chatting">https://github.com/zhuliangyu/react-online-chatting</a>
                      </div>
+
                     <div>
                         Demo:
                         <a href="https://zhuliangyu.github.io/react-online-chatting/">https://zhuliangyu.github.io/react-online-chatting/</a>
+                    </div>
+
+                    <div>
+                        Firebase: <a href="https://console.firebase.google.com/project/look4tutorchatting/database/data/messageArr" target="_blank">See all data</a>
                     </div>
                 </div>
                 {/*personal information*/}
